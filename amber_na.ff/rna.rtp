@@ -171,7 +171,7 @@
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult4
  [ impropers ]
-    C4    C8    N9   C1'  
+    C8    C4    N9   C1'  
     C6   H61    N6   H62
     N9    N7    C8    H8
     N1    N3    C2    H2
@@ -257,7 +257,7 @@
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult4
  [ impropers ]
-    C4    C8    N9   C1'  
+    C8    C4    N9   C1'  
     C6   H61    N6   H62
     N9    N7    C8    H8
     N1    N3    C2    H2
