@@ -96,6 +96,13 @@
   HS SH         1    0.13360   229283.2 ; 7,(1986),230; CYS
   S  S          1    0.20380   138908.8 ; 7,(1986),230; CYX   (SCHERAGA)
   CT F          1    0.13800   307105.6 ; 13,(1992),963;CF4; R0=1.332 FOR CHF3
+;
+; New atomtype for C5' in DNA/RNA (checked with conversion and is the same as CT) 
+;
+  CI H1         1    0.10900   284512.0
+  CI CT         1    0.15260   259408.0
+  CI OH         1    0.14100   267776.0
+  CI OS         1    0.14100   267776.0
 
 
 
@@ -351,6 +358,20 @@ HS  SH  HS           1    92.070    292.880 ; AA cys
 F   CT  F            1   109.100    644.336 ; JCC,13,(1992),963;
 F   CT  H1           1   109.500    418.400 ; new99
 N   C   N            1   120.000    585.760 ; Added for Urea (same as N2-CA-N2) - EJS
+;
+; New atomtype for C5' in DNA/RNA (checked with conversion and is the same as CT) 
+;
+CT  CI  H1           1   109.500    418.400
+H1  CI  H1           1   109.500    292.880
+CI  CT  H1           1   109.500    418.400
+CI  CT  OS           1   109.500    418.400
+CI  CT  CT           1   109.500    334.720
+H1  CI  OS           1   109.500    418.400
+CT  CI  OS           1   109.500    418.400
+CI  OS  P            1   120.500    836.800
+H1  CI  OH           1   109.500    418.400
+CT  CI  OH           1   109.500    418.400
+CI  OH  HO           1   108.500    460.240
 
 [ dihedraltypes ]
 ;i  j   k  l	 func      phase      kd      pn
@@ -406,6 +427,39 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 
 
 [ dihedraltypes ]
+;i   j   k   l	   func	
+;
+; New dihedrals for C5' in DNA/RNA 
+;
+ CT  OS  CT  CI	   9       0.0      1.60247     3
+ CT  OS  CT  CI	   9     180.0      0.41840     2
+ H1  CI	 CT  OS	   9	   0.0	    1.04600	1
+ H1  CI	 CT  OH	   9	   0.0	    1.04600	1
+ H1  CT	 CI  OS	   9	   0.0	    1.04600	1
+ H1  CT	 CI  OH	   9	   0.0	    1.04600	1
+ CI  CT	 CT  CT	   9	   0.0	    0.75312	3
+ CI  CT	 CT  CT	   9	 180.0	    1.04600	2  
+ CI  CT	 CT  CT	   9	 180.0	    0.83680	1
+;
+ OS  P	 OS  CI	   9    31.795	    0.774797	1  ; alpha (6DP after conversion, as 6DP given in paper)
+ OS  P	 OS  CI	   9  351.9596	    5.257326	2  ; alpha
+ OS  P	 OS  CI	   9 357.24748	    1.484726	3  ; alpha
+ OH  P	 OS  CI	   9    31.795	    0.774797	1  ; alpha
+ OH  P	 OS  CI	   9  351.9596	    5.257326	2  ; alpha
+ OH  P	 OS  CI	   9 357.24748	    1.484726	3  ; alpha
+ CT  CT	 CI  OS	   9 190.97653	    4.928919	1  ; gamma
+ CT  CT	 CI  OS	   9 295.63279	    0.385355	2  ; gamma
+ CT  CT	 CI  OS	   9 348.09535	    4.028481	3  ; gamma
+ CT  CT	 CI  OH	   9 190.97653	    4.928919	1  ; gamma
+ CT  CT	 CI  OH	   9 295.63279	    0.385355	2  ; gamma
+ CT  CT	 CI  OH	   9 348.09535	    4.028481	3  ; gamma
+;
+ X   CI  OS  X	   9       0.0      1.60387     3
+ X   CI  OH  X     9       0.0      0.69733     3
+ X   CI  CT  X     9       0.0      0.65084     3
+;
+; Back to normal dihedrals
+;
 ;i   j   k   l	   func	
  CT  CT  OS  CT    9       0.0      1.60247     3  ; 
  CT  CT  OS  CT    9     180.0      0.41840     2  ; 
@@ -576,6 +630,33 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 #define torsion_ASN_CA_CB_CG_ND2_mult6         0.0        -0.443504        6  ; Proteins 78, 1950 (2010)
 
 
- 
+; Modified RNA chi torsions in CHIOL  
+; These should not override the general torsion for the atom types,
+; so to avoid introducing extra new atom types we list them explicitly for
+; the residues in question:
+
+
+#define torsion_RA_O4S_C1S_N9_C8_mult1	      68.79   4.04007 1
+#define torsion_RA_O4S_C1S_N9_C8_mult2	      15.64   4.49362 2
+#define torsion_RA_O4S_C1S_N9_C8_mult3	      171.58  1.91418 3 
+#define torsion_RA_O4S_C1S_N9_C8_mult4	      19.09   1.29369 4
+
+#define torsion_RG_O4S_C1S_N9_C8_mult1	      74.76   2.95014 1
+#define torsion_RG_O4S_C1S_N9_C8_mult2	      6.23    4.45805 2
+#define torsion_RG_O4S_C1S_N9_C8_mult3	      168.65  1.85226 3
+#define torsion_RG_O4S_C1S_N9_C8_mult4	      3.97    1.0711  4
+
+#define torsion_RC_O4S_C1S_N1_C6_mult1	      146.99  5.12582 1
+#define torsion_RC_O4S_C1S_N1_C6_mult2	      16.48   6.83917 2
+#define torsion_RC_O4S_C1S_N1_C6_mult3	      185.88  3.9225  3
+#define torsion_RC_O4S_C1S_N1_C6_mult4	      32.16   1.2983  4
+
+#define torsion_RU_O4S_C1S_N1_C6_mult1	      149.88  4.28902 1 
+#define torsion_RU_O4S_C1S_N1_C6_mult2	      16.76   7.31698 2
+#define torsion_RU_O4S_C1S_N1_C6_mult3	      179.35  2.433   3
+#define torsion_RU_O4S_C1S_N1_C6_mult4	      16.00   1.47068 4
+
+
+
 
 
