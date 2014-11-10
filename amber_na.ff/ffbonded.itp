@@ -636,25 +636,25 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 ; the residues in question:
 
 
-#define torsion_RA_O4S_C1S_N9_C8_mult1	      68.79   4.04007 1
-#define torsion_RA_O4S_C1S_N9_C8_mult2	      15.64   4.49362 2
-#define torsion_RA_O4S_C1S_N9_C8_mult3	      171.58  1.91418 3 
-#define torsion_RA_O4S_C1S_N9_C8_mult4	      19.09   1.29369 4
+#define torsion_RA_O4S_C1S_N9_C8_mult1	      68.7902  4.040112 1
+#define torsion_RA_O4S_C1S_N9_C8_mult2	      15.6360  4.493742 2
+#define torsion_RA_O4S_C1S_N9_C8_mult3	     171.5787  1.914347 3 
+#define torsion_RA_O4S_C1S_N9_C8_mult4	      19.0921  1.293567 4
 
-#define torsion_RG_O4S_C1S_N9_C8_mult1	      74.76   2.95014 1
-#define torsion_RG_O4S_C1S_N9_C8_mult2	      6.23    4.45805 2
-#define torsion_RG_O4S_C1S_N9_C8_mult3	      168.65  1.85226 3
-#define torsion_RG_O4S_C1S_N9_C8_mult4	      3.97    1.0711  4
+#define torsion_RG_O4S_C1S_N9_C8_mult1	      74.7558  2.950138 1
+#define torsion_RG_O4S_C1S_N9_C8_mult2	       6.2286  4.457885 2
+#define torsion_RG_O4S_C1S_N9_C8_mult3	     168.6503  1.852382 3
+#define torsion_RG_O4S_C1S_N9_C8_mult4	       3.9746  1.071188 4
 
-#define torsion_RC_O4S_C1S_N1_C6_mult1	      146.99  5.12582 1
-#define torsion_RC_O4S_C1S_N1_C6_mult2	      16.48   6.83917 2
-#define torsion_RC_O4S_C1S_N1_C6_mult3	      185.88  3.9225  3
-#define torsion_RC_O4S_C1S_N1_C6_mult4	      32.16   1.2983  4
+#define torsion_RC_O4S_C1S_N1_C6_mult1	     146.9892  5.125651 1
+#define torsion_RC_O4S_C1S_N1_C6_mult2	      16.4766  6.839125 2
+#define torsion_RC_O4S_C1S_N1_C6_mult3	     185.8774  3.922374 3
+#define torsion_RC_O4S_C1S_N1_C6_mult4	      32.1590  1.298421 4
 
-#define torsion_RU_O4S_C1S_N1_C6_mult1	      149.88  4.28902 1 
-#define torsion_RU_O4S_C1S_N1_C6_mult2	      16.76   7.31698 2
-#define torsion_RU_O4S_C1S_N1_C6_mult3	      179.35  2.433   3
-#define torsion_RU_O4S_C1S_N1_C6_mult4	      16.00   1.47068 4
+#define torsion_RU_O4S_C1S_N1_C6_mult1	     149.8583  4.289186 1
+#define torsion_RU_O4S_C1S_N1_C6_mult2	      16.7648  7.316812 2
+#define torsion_RU_O4S_C1S_N1_C6_mult3	     179.3474  2.432996 3
+#define torsion_RU_O4S_C1S_N1_C6_mult4	      16.0016  1.470592 4
 
 
 
