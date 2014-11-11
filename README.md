@@ -3,12 +3,12 @@ Force-field ports
 
 Port of force fields useful for RNA or RNA/protein complexes.
 
-Presently implements
-- AMBER99SB-ildn-star (taken from gromacs contrib repository)
-- Parmbsc0 corrections for DNA and RNA (merged from the version available in gromacs contrib repository)
-- Chi-OL3 corrections for RNA (implemented and tested locally)
-- Ions from Joung and Cheatam (implemented and tested locally)
-- Mg ions from Allner et al (implemented and tested locally)
+Presently implements:
+- AMBER99SB-ildn-star (ff99sb-star-ildn.tgz from gromacs force-field repository).
+- Parmbsc0 corrections for DNA and RNA [(Perez et al, 2007)](http://dx.doi.org/10.1529/biophysj.106.097782), merged from amber99sb_parmbsc0.ff.tgz taken from gromacs force-field repository. Gromacs port by [Guy et al (2012)](http://dx.doi.org/10.1016/j.bpj.2012.08.012).
+- Chi-OL3 corrections for RNA [(Zgarbova et al, 2011)](http://dx.doi.org/10.1021/ct200162x), implemented and validated locally against leaprc.ff14SB from amber14.
+- Ions from [Joung and Cheatam (2008)](http://dx.doi.org/10.1021/jp8001614), implemented and validated locally against frcmod.ionsjc_tip3p from amber14.
+- Mg ions from [Allner et al (2012)](http://dx.doi.org/10.1021/ct3000734), implemented and tested locally.
 
 USE AT YOUR OWN RISK
 
