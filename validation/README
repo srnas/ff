@@ -1,0 +1,3 @@
+Run the script ./check.sh in this directory.
+
+Notice that you should have gromacs and amber executables in your path

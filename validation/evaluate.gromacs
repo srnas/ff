@@ -1,0 +1,56 @@
+name=$1
+
+# add all ions
+awk '{
+  ions[1]="CL"
+  ions[2]="NA"
+  ions[3]="K "
+  ions[4]="RB"
+  ions[5]="CS"
+  ions[6]="LI"
+  if($3=="NA" || $3=="CL"){
+      c=c%6
+      c++
+      print substr($0,1,13)""ions[c]"   "ions[c]""substr($0,21)
+  } else print
+}' $name > gromacs.pdb
+
+# delete gromacs backups
+rm -fr \#*
+
+# setup with infinite cutoff
+cat > grompp.mdp << EOF
+integrator  = md
+nsteps	    = 1
+nstlist	    = 1	
+ns_type	    = simple
+coulombtype = cut-off
+rlist       = 0.0
+rcoulomb    = 0.0
+rvdw  	    = 0.0
+pbc         = no
+EOF
+
+# adjust this depending on your gromacs suffix
+suffix=_mpi_d
+
+rm -f topol.tpr conf.gro energy.xvg out err
+
+{
+# use first force field available
+echo 1
+echo 6
+} | pdb2gmx$suffix -f gromacs.pdb  >> out 2>> err
+
+grompp$suffix  >> out 2>> err && mdrun$suffix -rerun conf.gro  >> out 2>> err && {
+  echo 1 2 3 4 5 6 7 8
+} | g_energy$suffix -f ener.edr -xvg none  >> out 2>> err
+
+awk '{
+#  printf("Bond str    angles      dihedral       LJ-14        coulomb-14   LJ          coulomb       total\n");
+  printf("%11f %11f %11f %11f %11f %11f %11f\n",$2,$3,$4+$5,$6,$7,$8,$9);
+}' energy.xvg
+
+
+
+

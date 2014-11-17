@@ -1,0 +1,66 @@
+name=$1
+
+
+# find nubmer of terminal residue
+terminus=$(grep H3T $name | awk '{print $5}')
+
+awk -v terminus=$terminus '{
+  ions[1]="CL"
+  ions[2]="NA"
+  ions[3]="K "
+  ions[4]="RB"
+  ions[5]="CS"
+  ions[6]="LI"
+
+# fix terminal residue name
+  if($5==terminus){
+    print substr($0,1,18)""substr($0,20,1)"3"substr($0,21)
+# replace ions
+  } else if($3=="NA" || $3=="CL"){
+      c=c%6
+      c++
+      print substr($0,1,13)""ions[c]"   "ions[c]""substr($0,21)
+  } else print
+}' $name > amber.pdb
+
+cat > leap.in << EOF
+source leaprc.ff14SB
+loadAmberParams frcmod.ionsjc_tip3p
+x = loadpdb amber.pdb
+saveamberparm x amber.prmtop amber.inpcrd
+quit
+EOF
+
+cat > mdin << EOF
+single point calculation
+ &cntrl
+   cut=1000.0, ntpr=1,
+   nstlim = 0, dt=0.0000000001,
+   ntt=1, tempi=300.0, temp0=300.0, tautp=2.0,
+   ntx=1, irest=0, ntb=0, ntwx=1
+ &end
+EOF
+
+rm -f out err
+
+tleap -f leap.in  1>>out 2>>err &&
+sander -O -i mdin -c amber.inpcrd -p amber.prmtop -o amber.out -e amberene.dat 1>>out 2>>err &&
+awk '{
+  kcal=4.184
+  if($1=="BOND") bond=$3;
+  if($4=="ANGLE") angle=$6;
+  if($7=="DIHED") dihe=$9;
+  if($1=="1-4" && $2=="NB") nb14=$4;
+  if($5=="1-4" && $6=="EEL") eel14=$8;
+  if($9=="VDWAALS") vdwalls=$11;
+  if($1=="EELEC") eel=$3
+  if($1=="R" && $2=="M" && $3=="S") exit
+} END {
+#  printf("Bond str    angles      dihedral      LJ-14        coulomb-14   LJ          coulomb    \n");
+  printf("%11f %11f %11f %11f %11f %11f %11f\n",bond*kcal,angle*kcal,dihe*kcal,nb14*kcal,eel14*kcal,vdwalls*kcal,eel*kcal);
+}' amber.out
+
+
+
+
+
