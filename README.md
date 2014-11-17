@@ -10,5 +10,7 @@ Presently implements:
 - Ions from [Joung and Cheatam (2008)](http://dx.doi.org/10.1021/jp8001614), implemented and validated locally against frcmod.ionsjc_tip3p from amber14.
 - Mg ions from [Allner et al (2012)](http://dx.doi.org/10.1021/ct3000734), implemented and tested locally.
 
-USE AT YOUR OWN RISK
+Local ports and validations by Sandro Bottaro and Giovanni Bussi, with the help of Maria Darvas and Giovanni Pinamonti.
+
+USE AT YOUR OWN RISK!!
 
