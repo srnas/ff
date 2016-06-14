@@ -61,6 +61,8 @@ HW_tip4p           1.00800      ; tip4p HW
 OW_tip4p          16.00000      ; tip4p OW
 HW_tip5p           1.00800      ; tip5p HW
 OW_tip5p          16.00000      ; tip5p OW
+HW_opc             1.00800      ; opc HW
+OW_opc            16.00000      ; opc OW
 MW                 0.00000      ; Virtual site for tip4p/5p water point charge
 MCH3               0.00000      ; Dummy mass in rigid tetrahedral CH3 group
 MNH3               0.00000      ; Dummy mass in rigid tetrahedral NH3 group
