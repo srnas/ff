@@ -1,0 +1,137 @@
+#! /bin/bash
+
+grofile=$1
+trajfile=$2
+output=$3
+waterres=SOL
+
+if (($# !=3)); then
+cat << EOF
+Map a gro file containing TIP3P water to OPC water
+
+Usage: $0 conf.gro --itrr=traj.trr trajout.trr
+
+Assumes plumed to be in the execution path and to be compiled
+with support for writing xtc/trr files.
+
+First argument (gro file) is used to find water molecules (assuming SOL residue name).
+
+Second argument can be any option undestood by plumed to read a trajectory
+(e.g. --ixtc=pippo.xtc).
+
+Last argument is the name of an output file, as used by DUMPATOMS FILE=
+Thus, if plumed is compiled properly, it can be gro/xtc/trr
+Notice that if you write a gro file the names are not correct
+
+Once you have produced an output file, you can feed it again to grompp
+after having replaced the water model in the top file.
+
+EOF
+  exit
+fi
+
+test -f "$grofile"  || { echo "File $grofile does not exist" ; exit 1 ; }
+test -n "$output"   || { echo "Output file missing" ; exit 1 ; }
+
+# analyze gro file
+cat "$grofile" |
+awk -v output="$output" -v waterres=$waterres ' 
+BEGIN{
+  c=0;
+  at=0;
+  nwat=0;
+
+# tip 3p parameters:
+  l1=0.9572
+  theta1=104.52
+
+# opc parameters:
+  l2=0.8724
+  theta2=103.6
+  z2=0.1594
+
+  pi=3.14159265358979
+
+  cost1=cos(theta1*pi/180)
+  cost2=cos(theta2*pi/180)
+
+  alpha2_plus_beta2=(l2/l1)*(l2/l1)*(1-cost2*cost1)/(1-cost1*cost1)
+  alpha_times_beta=0.5*(l2/l1)*(l2/l1)*(cost1-cost2)/(cost1*cost1-1)
+
+  alpha=sqrt(0.5*(alpha2_plus_beta2-sqrt(alpha2_plus_beta2*alpha2_plus_beta2-4*alpha_times_beta*alpha_times_beta)))
+  beta=alpha_times_beta/alpha;
+
+  gamma=z2/l1/sqrt(2.0+2.0*cost1)
+
+  #print "#",alpha2_plus_beta2,alpha_times_beta
+  #print "#",alpha,beta,alpha*alpha+beta*beta,alpha*beta
+  #print "#",alpha*alpha+beta*beta+2*alpha*beta*cost1,(l2/l1)*(l2/l1)
+  #print "#",2*alpha*beta+(alpha*alpha+beta*beta)*cost1,(l2/l1)*(l2/l1)*cost2
+  
+  w[0,0]=1.0;
+  w[0,1]=0.0;
+  w[0,2]=0.0;
+  
+  w[1,0]=1.0-alpha-beta;
+  w[1,1]=alpha;
+  w[1,2]=beta;
+  
+  w[2,0]=1.0-alpha-beta;
+  w[2,1]=beta;
+  w[2,2]=alpha;
+
+  w[3,0]=1.0-2*gamma;
+  w[3,1]=gamma;
+  w[3,2]=gamma;
+
+}
+{
+  if(NR==2) natoms=$1;
+  if(NR<=2)  next;
+  if(NR-2>natoms) exit;
+  if(!match($0,waterres)){
+      printf("new%d: CENTER ATOMS=%d WEIGHTS=1\n",at,NR-2)
+      at++
+  } else {
+    n[c]=NR-2
+    if(c%3==2){
+      print "# water",nwat,"at",n[0],n[1],n[2];
+      for(i=0;i<4;i++){
+        printf("new%d: CENTER ATOMS=%d,%d,%d WEIGHTS=%f,%f,%f\n",at,n[0],n[1],n[2],w[i,0],w[i,1],w[i,2]);
+        at++
+        
+      }
+# these are to monitor the output parameters:
+#     printf("dist1-%d: DISTANCE ATOMS=%d,%d\n",nwat,n[0],n[1])
+#     printf("dist2-%d: DISTANCE ATOMS=%d,%d\n",nwat,n[0],n[2])
+#     printf("angle-%d: ANGLE ATOMS=%d,%d,%d\n",nwat,n[1],n[0],n[2])
+#     printf("ndist1-%d: DISTANCE ATOMS=new%d,new%d\n",nwat,at-4,at-3)
+#     printf("ndist2-%d: DISTANCE ATOMS=new%d,new%d\n",nwat,at-4,at-2)
+#     printf("ndist3-%d: DISTANCE ATOMS=new%d,new%d\n",nwat,at-1,at-4)
+#     printf("nangle-%d: ANGLE ATOMS=new%d,new%d,new%d\n",nwat,at-2,at-4,at-3)
+      nwat++
+
+    }
+    c++;
+    c=c%3;
+  }
+}END{
+  printf("DUMPATOMS ATOMS=");
+  for(i=0;i<at-1;i++) printf("new%d,",i);
+  printf("new%d FILE=%s\n",at-1,output);
+
+# these are to monitor the output parameters:
+#  printf("PRINT FILE=oldpar.dat ARG=");
+#  for(i=0;i<nwat-1;i++) printf("dist1-%d,dist2-%d,angle-%d,",i,i,i);
+#  printf("dist1-%d,dist2-%d,angle-%d\n",nwat-1,nwat-1,nwat-1);
+#  printf("PRINT FILE=newpar.dat ARG=");
+#  for(i=0;i<nwat-1;i++) printf("ndist1-%d,ndist2-%d,ndist3-%d,nangle-%d,",i,i,i,i);
+#  printf("ndist1-%d,ndist2-%d,ndist3-%d,nangle-%d\n",nwat-1,nwat-1,nwat-1);
+}' > plumed.dat
+
+
+plumed --no-mpi driver $trajfile --plumed plumed.dat
+
+
+
+
