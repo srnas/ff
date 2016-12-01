@@ -1,0 +1,20 @@
+#!/bin/bash
+rm -f errors.dat
+if [ "$#" -ne 1 ]; then
+  echo "ERROR: pdb filename required as argument" >&2
+  echo "The pdb present in the folder are:" >&2
+  ls *.pdb >&2
+  exit
+fi
+pdb=$1
+prefix=`basename $1 .pdb`
+echo -e "1\n1\n" >in
+pdb2gmx_mpi -f $1 -o $prefix"_processed" <in
+editconf_mpi -f $prefix"_processed.gro" -o $prefix"_newbox.gro" -c -d 1.0 -bt dodecahedron
+genbox_mpi -cp $prefix"_newbox.gro" -cs spc216.gro -o $prefix"_solv.gro" -p topol.top
+grompp_mpi -f ions.mdp -c $prefix"_solv.gro" -p topol.top -o ions.tpr
+echo -e "3\n" >in
+genion_mpi -s ions.tpr -o $prefix"_solv_ions.gro" -p topol.top -pname NA -np 1 <in
+grompp_mpi -f minim.mdp -c $prefix"_solv_ions.gro" -p topol.top -o em.tpr
+grompp_mpi -f prod_for_ff_test.mdp -c npt.gro -t npt.cpt -p topol.top -o corrections.tpr
+rm -f \#*

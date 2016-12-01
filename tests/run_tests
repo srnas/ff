@@ -1,0 +1,67 @@
+#!/bin/bash
+lagfile=lagmult_list_SC
+kbt=2.494353
+for seq in A C; do
+    old_string="res: RESTRAINT ARG=j1,j2,j3,j4,j5,j6,j7 AT=0,0,0,0,0,0,0 SLOPE="
+    res1=$seq
+    new_res=`
+    for i in j1 j2;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}3 ;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j4 j5;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}6 ;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}7 ;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f ",$2*kbt)}' <(grep -v "#" $lagfile);done`
+    new_string=$old_string$new_res
+    echo "Entering test_"${seq}" directory ..."
+    cd test_${seq}
+    rm -f \#*
+    rm -f bck.*
+    rm -f corrections.tpr
+    echo "  Entering gromacs_setup directory to make corrections.tpr file..."
+      cd gromacs_setup
+      bash setup ${seq}.pdb 2>errors.dat >/dev/null
+      rm -f \#*
+      mv corrections.tpr ../
+      echo "  Leaving gromacs_setup directory..."
+      cd ../
+    sed -i '/'"$old_string"'/c\'"$new_string"'' plumed.dat
+    echo "  Running test for sequence \""${seq}"\"..."
+    bash test amber.tpr corrections.tpr traj_${seq}.trr 2>errors.dat >/dev/null
+    echo "  OK"
+    rm -f \#* bck.*
+    echo "Leaving test_"${seq}" directory..."
+    cd ..
+done
+for seq in AA AC CA CC; do
+    old_string="res: RESTRAINT ARG=j1_1,j1_2,j2_1,j2_2,j3_1,j3_2,j4_1,j4_2,j5_1,j5_2,j6_1,j6_2,j7_1,j7_2,j8,j9,j10,j11_1,j11_2,j12 AT=0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0,0 SLOPE="
+    res1=`awk -v s=$seq 'BEGIN{split(s,s2,"");print s2[1]}'`
+    res2=`awk -v s=$seq 'BEGIN{split(s,s2,"");print s2[2]}'`
+    new_res=`
+    for i in j1 j2;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,%f,",$2*kbt,$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}3 j${res2}3;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j4 j5;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,%f,",$2*kbt,$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}6 j${res2}6;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j${res1}7 j${res2}7;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j8 j9 j10 j11_1 j11_2;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f,",$2*kbt,$2*kbt)}' <(grep -v "#" $lagfile);done
+    for i in j12;do awk -v j=$i -v kbt=$kbt '{if($1==j) printf("%f ",$2*kbt,$2*kbt)}' <(grep -v "#" $lagfile);done `
+    new_string=$old_string$new_res
+    echo "Entering test_"${seq}" directory ..."
+    cd test_${seq}
+    rm -f \#*
+    rm -f bck.*
+    rm -f corrections.tpr
+    echo "  Entering gromacs_setup directory to make corrections.tpr file..."
+      cd gromacs_setup
+      bash setup ${seq}.pdb 2>errors.dat >/dev/null
+      rm -f \#*
+      mv corrections.tpr ../
+      echo "  Leaving gromacs_setup directory..."
+      cd ../
+    sed -i '/'"$old_string"'/c\'"$new_string"'' plumed.dat
+    echo "  Running test for sequence \""${seq}"\"..."
+    bash test amber.tpr corrections.tpr traj_${seq}.trr 2>errors.dat >/dev/null
+    echo "  OK"
+    rm -f \#* bck.*
+    echo "Leaving test_"${seq}" directory..."
+    cd ..
+done
+

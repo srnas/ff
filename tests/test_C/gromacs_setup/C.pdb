@@ -1,0 +1,21 @@
+TITLE     GROup oRCNAchos and Cynical Suckers
+MODEL        1RCN
+ATOM      1  O5' RCN B   1      20.169   0.999   5.184  1.00  5.88           O
+ATOM      2  C5' RCN B   1      20.843   2.047   4.444  1.00  6.35           C
+ATOM      3  C4' RCN B   1      20.123   3.351   4.630  1.00  5.85           C
+ATOM      4  O4' RCN B   1      18.721   3.229   4.218  1.00  6.81           O
+ATOM      5  C3' RCN B   1      19.964   3.862   6.076  1.00  5.59           C
+ATOM      6  O3' RCN B   1      21.184   4.419   6.502  1.00  6.38           O
+ATOM      7  C2' RCN B   1      18.810   4.837   5.936  1.00  6.20           C
+ATOM      8  O2' RCN B   1      19.285   6.030   5.365  1.00  7.06           O
+ATOM      9  C1' RCN B   1      17.913   4.069   4.991  1.00  6.48           C
+ATOM     10  N1  RCN B   1      16.974   3.194   5.768  1.00  6.41           N
+ATOM     11  C2  RCN B   1      15.815   3.784   6.305  1.00  7.52           C
+ATOM     12  O2  RCN B   1      15.598   4.997   6.167  1.00  8.88           O
+ATOM     13  N3  RCN B   1      14.981   2.990   7.003  1.00  9.22           N
+ATOM     14  C4  RCN B   1      15.156   1.739   7.182  1.00  9.06           C
+ATOM     15  N4  RCN B   1      14.268   1.005   7.850  1.00  9.56           N
+ATOM     16  C5  RCN B   1      16.261   1.195   6.741  1.00  7.75           C
+ATOM     17  C6  RCN B   1      17.133   1.897   6.034  1.00  6.27           C
+TERRCN
+ENDMDLRCN
