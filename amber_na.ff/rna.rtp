@@ -82,6 +82,41 @@
    C2'   O2'
    O2'  HO'2
  [ dihedrals ]
+   ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult1 
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult2
+   ;   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult1   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult2
+   ; 
+   C4'   C3'    O3'  +P   torsion_epsilon_mult1     
+   C4'   C3'    O3'  +P   torsion_epsilon_mult2     
+   C4'   C3'    O3'  +P   torsion_epsilon_mult3
+   ;
+   C3'   O3'    +P   +O5' torsion_zeta_mult1
+   C3'   O3'    +P   +O5' torsion_zeta_mult2
+   C3'   O3'    +P   +O5' torsion_zeta_mult3
+   ;
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
@@ -166,6 +201,49 @@
    O2'  HO'2
   -O3'     P
  [ dihedrals ]
+   ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult1 
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult2
+   ;   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult1   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult2
+   ; 
+   P     O5'    C5'  C4'  torsion_beta_mult1
+   P     O5'    C5'  C4'  torsion_beta_mult2
+   P     O5'    C5'  C4'  torsion_beta_mult3
+   ;
+   C4'   C3'   O3'  +P    torsion_epsilon_mult1
+   C4'   C3'   O3'  +P    torsion_epsilon_mult2
+   C4'   C3'   O3'  +P    torsion_epsilon_mult3
+   ;
+   C3'   O3'    +P   +O5' torsion_zeta_mult1
+   C3'   O3'    +P   +O5' torsion_zeta_mult2
+   C3'   O3'    +P   +O5' torsion_zeta_mult3
+   ;
+   -O3'   P     O5'   C5' torsion_alpha_mult1
+   -O3'   P     O5'   C5' torsion_alpha_mult2
+   -O3'   P     O5'   C5' torsion_alpha_mult3
+   ;
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
@@ -252,6 +330,41 @@
    O3'   H3T
   -O3'     P
  [ dihedrals ]
+  ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult1 
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult2
+   ;   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult1   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult2
+   ;
+   P     O5'    C5'  C4'  torsion_beta_mult1
+   P     O5'    C5'  C4'  torsion_beta_mult2
+   P     O5'    C5'  C4'  torsion_beta_mult3
+   ;
+   -O3'   P     O5'   C5' torsion_alpha_mult1
+   -O3'   P     O5'   C5' torsion_alpha_mult2
+   -O3'   P     O5'   C5' torsion_alpha_mult3
+   ;
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
@@ -333,6 +446,33 @@
    O2'  HO'2
    O3'   H3T
  [ dihedrals ]
+ ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RA_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult1 
+   O4'   C1'    N9   C4   torsion_RA_O4S_C1S_N9_C4_mult2
+   ;   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult1   
+   H1'   C1'    N9   C8   torsion_RA_H1_C1S_N9_C8_mult2
+   ;
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RA_O4S_C1S_N9_C8_mult3
@@ -406,6 +546,7 @@
    C2'   O2'
    O2'  HO'2
  [ dihedrals ]
+   
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult3
@@ -484,6 +625,7 @@
    O2'  HO'2
   -O3'     P
  [ dihedrals ]
+   
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult3
@@ -564,6 +706,7 @@
    O3'   H3T
   -O3'     P
  [ dihedrals ]
+   
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult3
@@ -639,6 +782,7 @@
    O2'  HO'2
    O3'   H3T
   [ dihedrals ]
+   
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RU_O4S_C1S_N1_C6_mult3
@@ -722,6 +866,7 @@
    C2'   O2'
    O2'  HO'2
  [ dihedrals ]
+   
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult3
@@ -809,6 +954,7 @@
    O2'  HO'2
   -O3'     P
  [ dihedrals ]
+   
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult3
@@ -898,6 +1044,7 @@
    O3'   H3T
   -O3'     P
  [ dihedrals ]
+   
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult3
@@ -982,6 +1129,7 @@
    O2'  HO'2
    O3'   H3T
  [ dihedrals ]
+   
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult1
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult2
    O4'   C1'    N9   C8   torsion_RG_O4S_C1S_N9_C8_mult3
@@ -1058,6 +1206,41 @@
    C2'   O2'
    O2'  HO'2
  [ dihedrals ]
+   ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult1   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult2
+   ;   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult1   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult2
+   ;
+   C4'   C3'    O3'  +P   torsion_epsilon_mult1     
+   C4'   C3'    O3'  +P   torsion_epsilon_mult2     
+   C4'   C3'    O3'  +P   torsion_epsilon_mult3
+   ;
+   C3'   O3'    +P   +O5' torsion_zeta_mult1
+   C3'   O3'    +P   +O5' torsion_zeta_mult2
+   C3'   O3'    +P   +O5' torsion_zeta_mult3
+   ;
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult3
@@ -1138,6 +1321,49 @@
    O2'  HO'2
   -O3'     P
  [ dihedrals ]
+   ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult1 
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult2
+   ;   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult1   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult2
+   ;
+   P     O5'    C5'  C4'  torsion_beta_mult1
+   P     O5'    C5'  C4'  torsion_beta_mult2
+   P     O5'    C5'  C4'  torsion_beta_mult3
+   ;
+   C4'   C3'   O3'  +P    torsion_epsilon_mult1
+   C4'   C3'   O3'  +P    torsion_epsilon_mult2
+   C4'   C3'   O3'  +P    torsion_epsilon_mult3
+   ;
+   -O3'   P     O5'   C5' torsion_alpha_mult1
+   -O3'   P     O5'   C5' torsion_alpha_mult2
+   -O3'   P     O5'   C5' torsion_alpha_mult3
+   ;
+   C3'   O3'    +P   +O5' torsion_zeta_mult1
+   C3'   O3'    +P   +O5' torsion_zeta_mult2
+   C3'   O3'    +P   +O5' torsion_zeta_mult3
+   ;
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult3
@@ -1220,6 +1446,41 @@
    O3'   H3T
   -O3'     P
  [ dihedrals ]
+    ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult1   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult2
+   ;   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult1   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult2
+   ;
+   P     O5'    C5'  C4'  torsion_beta_mult1
+   P     O5'    C5'  C4'  torsion_beta_mult2
+   P     O5'    C5'  C4'  torsion_beta_mult3
+   ;
+   -O3'   P     O5'   C5' torsion_alpha_mult1
+   -O3'   P     O5'   C5' torsion_alpha_mult2
+   -O3'   P     O5'   C5' torsion_alpha_mult3
+   ;
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult3
@@ -1297,6 +1558,33 @@
    O2'  HO'2
    O3'   H3T
  [ dihedrals ]
+    ;Amber NMR
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult1
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult2
+   H1'   C1'    C2'  H2'1 torsion_R_H1_C1S_C2S_H2_mult3
+   ;
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult1
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult2
+   H3'   C3'    C2'  H2'1 torsion_R_H3_C3S_C2S_H2_mult3
+   ;
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult1
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult2
+   H4'   C4'    C3'  H3'  torsion_RC_H4_C4S_C3S_H3_mult3
+   ;
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul1
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul2
+   H5'1  C5'    C4'  H4'  torsion_R_H5p_C5S_C4S_H4_mul3
+   ;
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul1
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul2
+   H5'2  C5'    C4'  H4'  torsion_R_H5s_C5S_C4S_H4_mul3
+   ;   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult1   
+   O4'   C1'    N1   C2   torsion_RC_O4S_C1S_N1_C2_mult2
+   ;   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult1   
+   H1'   C1'    N1   C6   torsion_RC_H1_C1S_N1_C6_mult2
+   ;
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult1
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult2
    O4'   C1'    N1   C6   torsion_RC_O4S_C1S_N1_C6_mult3
