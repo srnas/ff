@@ -1,0 +1,19 @@
+#!/bin/bash
+amber=$1 
+corrections=$2
+rm -f errors.dat
+rm -f ene_no_corrections.xvg
+rm -f ene_with_corrections.xvg
+rm -f plumed_bias
+rm -f gromacs_bias
+rm -f bias_comparison
+traj=$3
+mdrun_mpi_d -v -s $amber -rerun $traj
+echo -e "10\n0" >in
+g_energy_mpi_d -f ener.edr -o ene_no_corrections.xvg <in
+mdrun_mpi_d -v -s $corrections -rerun $traj
+g_energy_mpi_d -f ener.edr -o ene_with_corrections.xvg <in
+mdrun_mpi_d -v -s $amber -rerun $traj -plumed plumed.dat 
+grep -v "#" BIAS |awk '{print $2}' >plumed_bias
+paste ene_no_corrections.xvg ene_with_corrections.xvg |awk '$1~/[0-9]/{print $4-$2}' >gromacs_bias
+paste gromacs_bias plumed_bias >bias_comparison
