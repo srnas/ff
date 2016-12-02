@@ -19,3 +19,10 @@ genion_mpi -s ions.tpr -o $prefix"_solv_ions.gro" -p topol.top -pname NA -np 1 <
 grompp_mpi -f minim.mdp -c $prefix"_solv_ions.gro" -p topol.top -o em.tpr
 grompp_mpi -f prod_for_ff_test.mdp -c npt.gro -t npt.cpt -p topol.top -o corrections.tpr
 rm -f \#*
+echo -e "1\nq" >in
+make_ndx_mpi -f corrections.tpr -o index.ndx < in    
+echo -e "1\n" >in
+tpbconv_mpi -s corrections.tpr -n index.ndx -o new.tpr < in
+mv new.tpr corrections.tpr
+rm index.ndx
+

@@ -14,3 +14,10 @@ editconf_mpi -f $prefix"_processed.gro" -o $prefix"_newbox.gro" -c -d 1.0 -bt do
 genbox_mpi -cp $prefix"_newbox.gro" -cs spc216.gro -o $prefix"_solv.gro" -p topol.top
 grompp_mpi -f minim.mdp -c $prefix"_solv.gro" -p topol.top -o em.tpr
 grompp_mpi -f prod_for_ff_test.mdp -c npt.gro -t npt.cpt -p topol.top -o corrections.tpr  
+echo -e "1\nq" >in
+make_ndx_mpi -f corrections.tpr -o index.ndx < in    
+echo -e "1\n" >in
+tpbconv_mpi -s corrections.tpr -n index.ndx -o new.tpr < in
+mv new.tpr corrections.tpr
+rm index.ndx
+
