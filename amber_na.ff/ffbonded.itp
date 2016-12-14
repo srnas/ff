@@ -659,48 +659,48 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 
 
 ;Using CHIOL3+NMR corrections
-#define torsion_R_H1_C1S_C2S_H2_mult1 0.000000 -2.224320 1
-#define torsion_R_H1_C1S_C2S_H2_mult2 0.000000 5.297827 2
+#define torsion_R_H1_C1S_C2S_H2_mult1 0.000000 -1.557463 1
+#define torsion_R_H1_C1S_C2S_H2_mult2 0.000000 3.709524 2
 #define torsion_R_H1_C1S_C2S_H2_mult3 0.0 0.65084 3
 ;
-#define torsion_R_H3_C3S_C2S_H2_mult1 0.000000 -0.288805 1
-#define torsion_R_H3_C3S_C2S_H2_mult2 0.000000 0.687868 2
+#define torsion_R_H3_C3S_C2S_H2_mult1 0.000000 -0.056939 1
+#define torsion_R_H3_C3S_C2S_H2_mult2 0.000000 0.135616 2
 #define torsion_R_H3_C3S_C2S_H2_mult3 0.0 0.65084 3
 ;
-#define torsion_RA_H4_C4S_C3S_H3_mult1 0.000000 -2.030012 1
-#define torsion_RA_H4_C4S_C3S_H3_mult2 0.000000 4.835029 2
+#define torsion_RA_H4_C4S_C3S_H3_mult1 0.000000 -1.444551 1
+#define torsion_RA_H4_C4S_C3S_H3_mult2 0.000000 3.440593 2
 #define torsion_RA_H4_C4S_C3S_H3_mult3 0.0 0.65084 3
 ;
-#define torsion_RC_H4_C4S_C3S_H3_mult1 0.000000 -1.679129 1
-#define torsion_RC_H4_C4S_C3S_H3_mult2 0.000000 3.999306 2
+#define torsion_RC_H4_C4S_C3S_H3_mult1 0.000000 -1.052669 1
+#define torsion_RC_H4_C4S_C3S_H3_mult2 0.000000 2.507218 2
 #define torsion_RC_H4_C4S_C3S_H3_mult3 0.0 0.65084 3
 ;
-#define torsion_R_H5p_C5S_C4S_H4_mul1 0.000000 -0.899719 1
-#define torsion_R_H5p_C5S_C4S_H4_mul2 1.860270 3.779450 2
+#define torsion_R_H5p_C5S_C4S_H4_mul1 0.000000 -0.653149 1
+#define torsion_R_H5p_C5S_C4S_H4_mul2 1.860270 2.743682 2
 #define torsion_R_H5p_C5S_C4S_H4_mul3 0.0 0.65084 3
 ;
-#define torsion_R_H5s_C5S_C4S_H4_mul1 0.000000 0.512953 1
-#define torsion_R_H5s_C5S_C4S_H4_mul2 -29.753787 -2.480662 2
+#define torsion_R_H5s_C5S_C4S_H4_mul1 0.000000 0.577429 1
+#define torsion_R_H5s_C5S_C4S_H4_mul2 -29.753787 -2.792471 2
 #define torsion_R_H5s_C5S_C4S_H4_mul3 0.0 0.65084 3
-
-#define torsion_RA_O4S_C1S_N9_C4_mult1 68.600000 0.789484 1
-#define torsion_RA_O4S_C1S_N9_C4_mult2 137.200000 0.789484 2
 ;
-#define torsion_RC_O4S_C1S_N1_C2_mult1 70.400000 1.810664 1
-#define torsion_RC_O4S_C1S_N1_C2_mult2 140.800000 2.076938 2
-
-#define torsion_RA_H1_C1S_N9_C8_mult1 8.900000 0.507289 1
-#define torsion_RA_H1_C1S_N9_C8_mult2 17.800000 -2.130614 2
+#define torsion_RA_O4S_C1S_N9_C4_mult1 68.600000 0.298940 1
+#define torsion_RA_O4S_C1S_N9_C4_mult2 137.200000 0.298940 2
 ;
-#define torsion_RC_H1_C1S_N1_C6_mult1 6.900000 -1.292232 1
-#define torsion_RC_H1_C1S_N1_C6_mult2 13.800000 -4.430510 2
+#define torsion_RC_O4S_C1S_N1_C2_mult1 70.400000 0.429510 1
+#define torsion_RC_O4S_C1S_N1_C2_mult2 140.800000 0.492673 2
 ;
-#define torsion_beta_mult1 192.373644 2.243772 1
-#define torsion_beta_mult2 341.519536 2.859869 2
+#define torsion_RA_H1_C1S_N9_C8_mult1 8.900000 0.245190 1
+#define torsion_RA_H1_C1S_N9_C8_mult2 17.800000 -1.029798 2
+;
+#define torsion_RC_H1_C1S_N1_C6_mult1 6.900000 -0.620992 1
+#define torsion_RC_H1_C1S_N1_C6_mult2 13.800000 -2.129116 2
+;
+#define torsion_beta_mult1 185.551384 1.671935 1
+#define torsion_beta_mult2 352.692465 2.397482 2
 #define torsion_beta_mult3 0.0 1.60387 3
 ;
-#define torsion_epsilon_mult1 -119.954772 5.294086 1
-#define torsion_epsilon_mult2 -420.038995 6.230697 2
+#define torsion_epsilon_mult1 -118.085040 4.450189 1
+#define torsion_epsilon_mult2 -421.609137 5.373553 2
 #define torsion_epsilon_mult3 0.0 1.60387 3
 ;
 #define torsion_alpha_mult1 72.094496 1.456292 1
@@ -710,3 +710,4 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 #define torsion_zeta_mult1 -257.831008 1.000000 1
 #define torsion_zeta_mult2 0.000000 5.020800 2
 #define torsion_zeta_mult3 0.0 1.046 3
+

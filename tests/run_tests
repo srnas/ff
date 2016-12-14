@@ -1,5 +1,5 @@
 #!/bin/bash
-lagfile=lagmult_list_SC
+lagfile=lagrangian_multipliers.dat
 kbt=2.494353
 for seq in A C; do
     old_string="res: RESTRAINT ARG=j1,j2,j3,j4,j5,j6,j7 AT=0,0,0,0,0,0,0 SLOPE="
