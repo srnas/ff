@@ -73,7 +73,7 @@ MNH3         0       0.0000  0.0000  A   0.00000e+00  0.00000e+00
 ;
 CI           6      12.01    0.0000  A   3.39967e-01  4.57730e-01 ; New atomtype for C5' in DNA/RNA (parmbsc0 
 
-Br          35      79.90    0.0000  A   4.64693-01   2.45414e-01 ; corrected from Cheatham (old 0.00000e+00  0.00000e+00)
+Br          35      79.90    0.0000  A   4.64693e-01   2.45414e-01 ; corrected from Cheatham (old 0.00000e+00  0.00000e+00)
 F            9      19.00    0.0000  A   4.10348e-01  1.40750e-02 ; corrected from Cheatham (old 3.11815e-01  2.55224e-01)
 I           53     126.9     0.0000  A   5.09594e-01  2.24604e-01 ; corrected from Cheatham (old 4.18722e-01  1.67360e+00)
 Cl          17      35.45    0.0000  A   4.47766e-01  1.48913e-01 ; corrected from Cheatham (old 4.40104e-01  4.18400e-01)
