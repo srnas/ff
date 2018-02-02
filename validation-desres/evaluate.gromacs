@@ -1,0 +1,43 @@
+name=$1
+rm -fr \#*
+
+# setup with infinite cutoff
+cat > grompp.mdp << EOF
+integrator  = md
+nsteps	    = 1
+nstlist	    = 1	
+ns_type	    = simple
+coulombtype = cut-off
+rlist       = 2.0
+rcoulomb    = 2.0
+rvdw  	    = 2.0
+pbc         = no
+coulomb-modifier = none
+cutoff-scheme = group
+constraints= h-bonds
+EOF
+
+# adjust this depending on your gromacs suffix
+suffix=
+#ntmpi="-ntmpi 1"
+ntmpi=
+
+rm -f topol.tpr conf.gro energy.xvg out err
+
+{
+# use first force field available
+echo 1
+echo 1
+} | gmx pdb2gmx$suffix -f $name  >> out 2>> err
+
+gmx grompp$suffix  -pp >> out 2>> err && gmx mdrun$suffix $ntmpi -rerun $name >> out 2>> err && {
+  echo 1 2 3 4 5 6 7 8
+} | gmx energy$suffix -f ener.edr -xvg none  >> out 2>> err
+
+awk '{
+  printf("%11f %11f %11f %11f %11f %11f %11f\n",$2,$3,$4+$5,$6,$7,$8,$9);
+}' energy.xvg | awk '{for(i=1;i<=NF;i++)printf(" %f",$i/4.184); print ""}'
+
+
+
+

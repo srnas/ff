@@ -13,8 +13,18 @@ CV                12.01000	; sp2 arom. 5 memb.ring w/1 N and 1 H (HIS)
 CW                12.01000	; sp2 arom. 5 memb.ring w/1 N-H and 1 H (HIS)
 C*                12.01000	; sp2 arom. 5 memb.ring w/1 subst. (TRP)
 C0                40.08000	; calcium
+C_desN                12.01000	; sp2 C carbonyl group
+CA_desN               12.01000	; sp2 C pure aromatic (benzene)
+CB_desN               12.01000	; sp2 aromatic C, 5&6 membered ring junction
+CK_desN               12.01000	; sp2 C 5 memb.ring in purines
+CM_desN               12.01000	; sp2 C  pyrimidines in pos. 5 & 6
+CA_desA               12.01000	; sp2 C pure aromatic (benzene)
+CB_desA               12.01000	; sp2 aromatic C, 5&6 membered ring junction
+CK_desA               12.01000	; sp2 C 5 memb.ring in purines
+CQ_desA               12.01000	; sp2 C in 5 mem.ring of purines between 2 N
 F                 19.00000	; fluorine
 H                  1.00800	; H bonded to nitrogen atoms
+H_des                  1.00800	; H bonded to nitrogen atoms
 HC                 1.00800	; H aliph. bond. to C without electrwd.group
 H1                 1.00800	; H aliph. bond. to C with 1 electrwd. group
 H2                 1.00800	; H aliph. bond. to C with 2 electrwd.groups
@@ -33,16 +43,25 @@ IB               131.00000	; 'big ion w/ waters' for vacuum (Na+, 6H2O)
 MG                24.30500	; magnesium
 N                 14.01000	; sp2 nitrogen in amide groups
 NA                14.01000	; sp2 N in 5 memb.ring w/H atom (HIS)
+NA_desN               14.01000	; sp2 N in 5 memb.ring w/H atom (HIS) # desres
 NB                14.01000	; sp2 N in 5 memb.ring w/LP (HIS,ADE,GUA)
+NB_desA               14.01000	; sp2 N in 5 memb.ring w/LP (HIS,ADE,GUA) # desres
 NC                14.01000	; sp2 N in 6 memb.ring w/LP (ADE,GUA)
+NC_desA               14.01000	; sp2 N in 6 memb.ring w/LP (ADE,GUA) # desres
+NC_desN               14.01000	; sp2 N in 6 memb.ring w/LP (ADE,GUA) # desres
 N2                14.01000	; sp2 N in amino groups
+N2_desN               14.01000	; sp2 N in amino groups # desres
 N3                14.01000	; sp3 N for charged amino groups (Lys, etc)
 N*                14.01000	; sp2 N 
+N*_desA               14.01000	; sp2 N  # desres
+N*_desN               14.01000	; sp2 N  # desres
 O                 16.00000	; carbonyl group oxygen
 OW                16.00000	; oxygen in TIP3P water
 OH                16.00000	; oxygen in hydroxyl group
 OS                16.00000	; ether and ester oxygen
 O2                16.00000	; carboxyl and phosphate group oxygen
+OS_case                16.00000	; des
+O2_case                16.00000	; des
 P                 30.97000	; phosphate,pol:JACS,112,8543,90,K.J.Miller
 S                 32.06000	; S in disulfide linkage,pol:JPC,102,2399,98
 SH                32.06000	; S in cystine

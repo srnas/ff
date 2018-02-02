@@ -447,12 +447,12 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
  OH  P	 OS  CI	   9    31.795	    0.774797	1  ; alpha
  OH  P	 OS  CI	   9  351.9596	    5.257326	2  ; alpha
  OH  P	 OS  CI	   9 357.24748	    1.484726	3  ; alpha
- CT  CT	 CI  OS	   9 190.97653	    4.928919	1  ; gamma
- CT  CT	 CI  OS	   9 295.63279	    0.385355	2  ; gamma
- CT  CT	 CI  OS	   9 348.09535	    4.028481	3  ; gamma
- CT  CT	 CI  OH	   9 190.97653	    4.928919	1  ; gamma
- CT  CT	 CI  OH	   9 295.63279	    0.385355	2  ; gamma
- CT  CT	 CI  OH	   9 348.09535	    4.028481	3  ; gamma
+ CT  CT  CI  OS    9       -60.31  -1.506018248 1 ; des gamma
+ CT  CT  CI  OS    9       -85.90   5.138152832 2 ; des gamma
+ CT  CT  CI  OS    9       -17.79   3.267687264 3 ; des gamma
+ CT  CT  CI  OH    9       -60.31  -1.506018248 1 ; des gamma
+ CT  CT  CI  OH    9       -85.90   5.138152832 2 ; des gamma
+ CT  CT  CI  OH    9       -17.79   3.267687264 3 ; des gamma
 ;
  X   CI  OS  X	   9       0.0      1.60387     3
  X   CI  OH  X     9       0.0      0.69733     3
@@ -486,8 +486,9 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
  OH  CT  CT  OH    9       0.0      4.91620     2  ; parm98, TC,PC,PAK
  OH  P   OS  CT    9       0.0      1.04600     3  ; JCC,7,(1986),230
  OH  P   OS  CT    9       0.0      5.02080     2  ; gg&gt ene.631g*/mp2
- OS  P   OS  CT    9       0.0      1.04600     3  ; JCC,7,(1986),230
- OS  P   OS  CT    9       0.0      5.02080     2  ; gg&gt ene.631g*/mp2
+ OS  P   OS  CT    9     -26.02  -1.159884296   1  ; des zeta
+ OS  P   OS  CT    9       2.98   4.460336464   2  ; des zeta
+ OS  P   OS  CT    9      29.47   0.787843016   3  ; des zeta
  OS  CT  N*  CK    9       0.0     10.46000     1  ; parm98, TC,PC,PAK
  OS  CT  N*  CM    9       0.0     10.46000     1  ; parm98, TC,PC,PAK
  H1  CT  C   O     9       0.0      3.34720     1  ; Junmei et al, 1999
@@ -630,33 +631,25 @@ X   X   CA  H5       4      180.00     4.60240     2	; bsd.on C6H6 nmodes
 #define torsion_ASN_CA_CB_CG_ND2_mult6         0.0        -0.443504        6  ; Proteins 78, 1950 (2010)
 
 
-; Modified RNA chi torsions in CHIOL  
+; Modified RNA chi torsions in des ff
 ; These should not override the general torsion for the atom types,
 ; so to avoid introducing extra new atom types we list them explicitly for
 ; the residues in question:
 
-
-#define torsion_RA_O4S_C1S_N9_C8_mult1	      68.7902  4.040112 1
-#define torsion_RA_O4S_C1S_N9_C8_mult2	      15.6360  4.493742 2
-#define torsion_RA_O4S_C1S_N9_C8_mult3	     171.5787  1.914347 3 
-#define torsion_RA_O4S_C1S_N9_C8_mult4	      19.0921  1.293567 4
-
-#define torsion_RG_O4S_C1S_N9_C8_mult1	      74.7558  2.950138 1
-#define torsion_RG_O4S_C1S_N9_C8_mult2	       6.2286  4.457885 2
-#define torsion_RG_O4S_C1S_N9_C8_mult3	     168.6503  1.852382 3
-#define torsion_RG_O4S_C1S_N9_C8_mult4	       3.9746  1.071188 4
-
-#define torsion_RC_O4S_C1S_N1_C6_mult1	     146.9892  5.125651 1
-#define torsion_RC_O4S_C1S_N1_C6_mult2	      16.4766  6.839125 2
-#define torsion_RC_O4S_C1S_N1_C6_mult3	     185.8774  3.922374 3
-#define torsion_RC_O4S_C1S_N1_C6_mult4	      32.1590  1.298421 4
-
-#define torsion_RU_O4S_C1S_N1_C6_mult1	     149.8583  4.289186 1
-#define torsion_RU_O4S_C1S_N1_C6_mult2	      16.7648  7.316812 2
-#define torsion_RU_O4S_C1S_N1_C6_mult3	     179.3474  2.432996 3
-#define torsion_RU_O4S_C1S_N1_C6_mult4	      16.0016  1.470592 4
-
-
-
-
+#define torsion_RC_O4S_C1S_N1_C6_mult1  111.18   2.839710088   1
+#define torsion_RC_O4S_C1S_N1_C6_mult2  -19.77   5.000022256   2
+#define torsion_RC_O4S_C1S_N1_C6_mult3   28.20  -3.734998224   3
+#define torsion_RC_O4S_C1S_N1_C6_mult4   -4.92  -1.297730360   4
+#define torsion_RU_O4S_C1S_N1_C6_mult1  147.46   2.540227736   1
+#define torsion_RU_O4S_C1S_N1_C6_mult2  -13.58   5.428806944   2
+#define torsion_RU_O4S_C1S_N1_C6_mult3   38.13  -2.091380768   3
+#define torsion_RU_O4S_C1S_N1_C6_mult4  -12.00  -0.690920656   4
+#define torsion_RG_O4S_C1S_N9_C8_mult1  -72.86  -3.816912576   1
+#define torsion_RG_O4S_C1S_N9_C8_mult2  -28.03   5.766242360   2
+#define torsion_RG_O4S_C1S_N9_C8_mult3   27.76  -1.780513752   3
+#define torsion_RG_O4S_C1S_N9_C8_mult4  -31.87   0.251408192   4
+#define torsion_RA_O4S_C1S_N9_C8_mult1   98.29   3.143585640   1
+#define torsion_RA_O4S_C1S_N9_C8_mult2  -31.44   4.585726760   2
+#define torsion_RA_O4S_C1S_N9_C8_mult3   50.52  -1.729732544   3
+#define torsion_RA_O4S_C1S_N9_C8_mult4   40.99   0.270914000   4
 

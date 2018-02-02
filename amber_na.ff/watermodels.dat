@@ -3,3 +3,4 @@ tip4p    TIP4P     TIP 4-point
 tip4pew  TIP4P-Ew  TIP 4-point optimized with Ewald, recommended 
 spc      SPC       simple point charge
 spce     SPC/E     extended simple point charge
+tip4pd   TIP4PD    TIP4PD (Piana et al)
