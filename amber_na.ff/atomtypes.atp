@@ -68,4 +68,3 @@ MCH3               0.00000      ; Dummy mass in rigid tetrahedral CH3 group
 MNH3               0.00000      ; Dummy mass in rigid tetrahedral NH3 group
 ;
 CI                12.01000	; New DNA/RNA C5' atomtype - Refinement of the AMBER Force Field for Nucleic Acids: Improving the Description of a/g Conformers
-
